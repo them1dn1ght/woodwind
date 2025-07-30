@@ -1,0 +1,85 @@
+{
+  "tenant_id":"b9970fd2-103f-4833-8789-6880e475809d",
+  "workspaces":[
+    { "wksp_type":"dsp", "env":"dev", "url":"adb-3877870779384882.2.azuredatabricks.net" },
+    { "wksp_type":"dsp", "env":"qa", "url":"adb-7095322177716868.8.azuredatabricks.net" },
+    { "wksp_type":"dsp", "env":"prod", "url":"adb-2782244118948962.2.azuredatabricks.net" },
+    { "wksp_type":"dspa", "env":"dev", "url":"adb-2472496005228745.5.azuredatabricks.net" },
+    { "wksp_type":"dspa", "env":"qa", "url":"adb-4084083935489710.10.azuredatabricks.net" },
+    { "wksp_type":"dspa", "env":"prod", "url":"adb-2845212110655923.3.azuredatabricks.net" },
+    { "wksp_type":"iiot", "env":"prod", "url":"adb-1301947965593498.18.azuredatabricks.net" }
+  ],
+  "service_principals":[
+    { "wksp_type":"dsp", "env":"dev", "client_id":"e9dfc980-49b5-462f-a95e-33b458b877a6", "secret_scope":"dsp-data-platform-prod", "secret_key":"dsp-adb-dev-secret-key" },
+    { "wksp_type":"dsp", "env":"qa", "client_id":"d29140a2-6b21-4a4c-9f37-90fbb57c8e9a", "secret_scope":"dsp-data-platform-prod", "secret_key":"dsp-adb-qa-secret-key" },
+    { "wksp_type":"dsp", "env":"prod", "client_id":"810e0cba-1e35-4688-bcfe-2958372f7133", "secret_scope":"dsp-data-platform-prod", "secret_key":"dsp-adb-prod-secret-key" },
+    { "wksp_type":"dspa", "env":"dev", "client_id":"58498668-95e7-48bd-a548-c01bd401d0db", "secret_scope":"dspa-kv-scope", "secret_key":"dspa-dev-adb-sp-secret" },
+    { "wksp_type":"dspa", "env":"qa", "client_id":"4dd596e9-ac8a-430a-bdba-40a8b84795f7", "secret_scope":"dspa-kv-scope", "secret_key":"dspa-qa-adb-sp-secret" },
+    { "wksp_type":"dspa", "env":"prod", "client_id":"c176ec93-c16d-463f-a0c4-b3ffba6fb32f", "secret_scope":"dspa-kv-scope", "secret_key":"dspa-prod-adb-sp-secret" },
+    { "wksp_type":"iiot", "env":"prod", "client_id":"803a6245-64a5-460c-9d35-464c312af0eb", "secret_scope":"iiot-vault-eus-prod", "secret_key":"iiot-adb-prod-secret-key" }
+  ],
+  "azure_data_factories":[
+    { "wksp_type":"dsp", "env":"dev", "resource_group_name":"dsp-dev-eus-rsg", "factory_name":"dsp-adf-dev" },
+    { "wksp_type":"dsp", "env":"qa", "resource_group_name":"dsp-qa-eus-rsg", "factory_name":"dsp-adf-qa" },
+    { "wksp_type":"dsp", "env":"prod", "resource_group_name":"dsp-prod-eus-rsg", "factory_name":"dsp-adf-prod" },
+    { "wksp_type":"dspa", "env":"dev", "resource_group_name":"dspa-wu2-dev-rsg", "factory_name":"dspa-dev-adf" },
+    { "wksp_type":"dspa", "env":"qa", "resource_group_name":"dspa-wu2-qa-rsg", "factory_name":"dspa-qa-adf" },
+    { "wksp_type":"dspa", "env":"prod", "resource_group_name":"dspa-wu2-prod-rsg", "factory_name":"dspa-prod-adf" },
+    { "wksp_type":"iiot", "env":"prod", "resource_group_name":"iiot-prod-eus-rsg", "factory_name":"iiot-adf-prod" }
+  ],
+  "date_dim":[
+    { "wksp_type":"dsp", "date_dim":"/Volumes/dsp_administration/prod/woodwind/date_dim.csv" },
+    { "wksp_type":"dspa", "date_dim":"/Volumes/dspa_administration/prod/woodwind/date_dim.csv" },
+    { "wksp_type":"iiot", "date_dim":"/Volumes/iiot_orchestration_logs/prod/woodwind/date_dim.csv" }
+  ],
+  "orch_jobs_viewers":[
+    { "wksp_type":"dsp", "view_group":"data_engineering" },
+    { "wksp_type":"dspa", "view_group":"data_engineering_apac" },
+    { "wksp_type":"iiot", "view_group":"iiot_core_team" }
+  ],
+  "external_metadata":[
+    { "wksp_type":"dsp", "env":"dev", "ext_metadata":"abfss://orchestration@dspdldev.dfs.core.windows.net/pipelines/*.parquet"},
+    { "wksp_type":"dsp", "env":"qa", "ext_metadata":"abfss://orchestration@dspdlqa.dfs.core.windows.net/pipelines/*.parquet"},
+    { "wksp_type":"dsp", "env":"prod", "ext_metadata":"abfss://orchestration@dspdlprod.dfs.core.windows.net/pipelines/*.parquet"},
+    { "wksp_type":"dspa", "env":"dev", "ext_metadata":"abfss://bronze@dspadevst.dfs.core.windows.net/orchestration/pipelines/*.parquet"},
+    { "wksp_type":"dspa", "env":"qa", "ext_metadata":"abfss://bronze@dspaqast.dfs.core.windows.net/orchestration/pipelines/*.parquet"},
+    { "wksp_type":"dspa", "env":"prod", "ext_metadata":"abfss://bronze@dspaprodst.dfs.core.windows.net/orchestration/pipelines/*.parquet"},
+    { "wksp_type":"iiot", "env":"prod", "ext_metadata":"abfss://orchestration@iiotstorageprod.dfs.core.windows.net/pipelines/*.parquet"}
+  ],
+  "metadata_checkpoint":[
+    { "wksp_type":"dsp", "env":"dev", "metadata_checkpoint":"/Volumes/dsp_administration/dev/woodwind/meta_checkpoint.csv"},
+    { "wksp_type":"dsp", "env":"qa", "metadata_checkpoint":"/Volumes/dsp_administration/qa/woodwind/meta_checkpoint.csv"},
+    { "wksp_type":"dsp", "env":"prod", "metadata_checkpoint":"/Volumes/dsp_administration/prod/woodwind/meta_checkpoint.csv"},
+    { "wksp_type":"dspa", "env":"dev", "metadata_checkpoint":"/Volumes/dspa_administration/dev/woodwind/meta_checkpoint.csv"},
+    { "wksp_type":"dspa", "env":"qa", "metadata_checkpoint":"/Volumes/dspa_administration/qa/woodwind/meta_checkpoint.csv"},
+    { "wksp_type":"dspa", "env":"prod", "metadata_checkpoint":"/Volumes/dspa_administration/prod/woodwind/meta_checkpoint.csv"},
+    { "wksp_type":"iiot", "env":"prod", "metadata_checkpoint":"/Volumes/iiot_orchestration_logs/prod/woodwind/meta_checkpoint.csv"}
+  ],
+  "metadata_table":[
+    { "wksp_type":"dsp", "env":"dev", "metadata":"/Volumes/dsp_administration/dev/woodwind/pipeline_metadata.csv"},
+    { "wksp_type":"dsp", "env":"qa", "metadata":"/Volumes/dsp_administration/qa/woodwind/pipeline_metadata.csv"},
+    { "wksp_type":"dsp", "env":"prod", "metadata":"/Volumes/dsp_administration/prod/woodwind/pipeline_metadata.csv"},
+    { "wksp_type":"dspa", "env":"dev", "metadata":"/Volumes/dsp_administration/dev/woodwind/pipeline_metadata.csv"},
+    { "wksp_type":"dspa", "env":"qa", "metadata":"/Volumes/dspa_administration/qa/woodwind/pipeline_metadata.csv"},
+    { "wksp_type":"dspa", "env":"prod", "metadata":"/Volumes/dspa_administration/prod/woodwind/pipeline_metadata.csv"},
+    { "wksp_type":"iiot", "env":"prod", "metadata":"/Volumes/iiot_orchestration_logs/prod/woodwind/pipeline_metadata.csv"}
+  ],
+  "log_location":[
+    { "wksp_type":"dsp", "env":"dev", "log":"/Volumes/dsp_administration/dev/woodwind/itinerary_log/"},
+    { "wksp_type":"dsp", "env":"qa", "log":"/Volumes/dsp_administration/qa/woodwind/itinerary_log/"},
+    { "wksp_type":"dsp", "env":"prod", "log":"/Volumes/dsp_administration/prod/woodwind/itinerary_log/"},
+    { "wksp_type":"dspa", "env":"dev", "log":"/Volumes/dspa_administration/dev/woodwind/itinerary_log/"},
+    { "wksp_type":"dspa", "env":"qa", "log":"/Volumes/dspa_administration/qa/woodwind/itinerary_log/"},
+    { "wksp_type":"dspa", "env":"prod", "log":"/Volumes/dspa_administration/prod/woodwind/itinerary_log/"},
+    { "wksp_type":"iiot", "env":"prod", "log":"/Volumes/iiot_orchestration_logs/prod/woodwind/itinerary_log/"}
+  ],
+  "conductor_log_location":[
+    { "wksp_type":"dsp", "env":"dev", "conductor_log":"/Volumes/dsp_administration/dev/woodwind/conductor_log/"},
+    { "wksp_type":"dsp", "env":"qa", "conductor_log":"/Volumes/dsp_administration/qa/woodwind/conductor_log/"},
+    { "wksp_type":"dsp", "env":"prod", "conductor_log":"/Volumes/dsp_administration/prod/woodwind/conductor_log/"},
+    { "wksp_type":"dspa", "env":"dev", "conductor_log":"/Volumes/dspa_administration/dev/woodwind/conductor_log/"},
+    { "wksp_type":"dspa", "env":"qa", "conductor_log":"/Volumes/dspa_administration/qa/woodwind/conductor_log/"},
+    { "wksp_type":"dspa", "env":"prod", "conductor_log":"/Volumes/dspa_administration/prod/woodwind/conductor_log/"},
+    { "wksp_type":"iiot", "env":"prod", "conductor_log":"/Volumes/iiot_orchestration_logs/prod/woodwind/conductor_log/"}
+  ]
+}
